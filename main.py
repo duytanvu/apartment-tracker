@@ -3,9 +3,6 @@ from bs4 import BeautifulSoup
 import requests
 from selenium import webdriver
 
-chrome_driver_path = "C:\Development\ChromeDriver\chromedriver.exe"
-driver = webdriver.Chrome(executable_path=chrome_driver_path)
-
 header = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36",
     "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8"
@@ -49,12 +46,12 @@ for element in all_price_elements:
 
 # Create Spreadsheet using Google Form
 # Substitute your own path here 👇
-chrome_driver_path = YOUR_PATH_HERE
+chrome_driver_path = "C:\Development\ChromeDriver\chromedriver.exe"
+
 driver = webdriver.Chrome(executable_path=chrome_driver_path)
 
 for n in range(len(all_links)):
-    # Substitute your own Google Form URL here 👇
-    driver.get(URL_TO_YOUR_GOOGLE_FORM)
+    driver.get("https://docs.google.com/forms/d/e/1FAIpQLSeI8_vYyaJgM7SJM4Y9AWfLq-tglWZh6yt7bEXEOJr_L-hV1A/viewform")
 
     time.sleep(2)
     address = driver.find_element_by_xpath(
